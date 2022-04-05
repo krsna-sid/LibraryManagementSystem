@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block title %}
+  Add books
+{% endblock %}
+{% block content %}
+  <div class="container-fluid" style="width: 500px;">
+    <h2 style="text-align: center;">Add Books</h2>
+    <div class="form-group">
+      <div class="col-xs-2">
+    <form method="POST">
+      {% csrf_token %}
+      {% bootstrap_form book_form %}
+      <center><input type="submit" class="btn btn-success" value="Add Book"></center>
+      {% if msg == None %}
+
+      {% else %}
+        <h4 style="color: red;">{{msg}}</h4>
+      {% endif %}
+        
+    </form>
+    </div>
+    </div>
+  </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block title %}
+  Update Books
+{% endblock %}
+{% block content %}
+<div class="container-fluid" style="width: 500px;">
+  <h2 style="text-align: center;">Update Books</h2><hr>
+  <form class="" method="POST">
+    {% csrf_token %}
+    {% bootstrap_form form %}
+    <center><input type="submit" class="btn btn-success" value="Update Book"></center>
+    
+  </form>
+</div>
+{% endblock %}

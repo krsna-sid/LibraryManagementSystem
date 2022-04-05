@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block title %}
+  Books
+{% endblock %}
+{% block content %}
+
+{% if user.is_authenticated %}
+<h2 style="text-align: center; color: burlywood;">Books Details</h2><hr>
+    <div class="container-fluid rounded">
+        <table class="table table-sm table-striped table-hover" border="1px solid #333">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Title of the Book</th>
+                <th scope="col">Language</th>
+                <th scope="col">Published By</th>
+                <th scope="col">Published Date</th>
+                <th scope="col">Category</th>
+                <th scope="col">Total Copies</th>
+                <th scope="col">Available Copies</th>
+                <th scope="col">Shelf</th>
+                {% if user.is_staff %}
+                <th scope="col">Action</th>
+                {% endif %}
+              </tr>
+            </thead>
+            <tbody>
+            {% for book in books %}
+              <tr>
+                <th scope="row">{{ book.id }}</th>
+                <td>{{ book.book_title }}</td>
+                <td>{{ book.language }}</td>
+                <td>{{ book.publication_by }}</td>
+                <td>{{ book.publication_yr }}</td>
+                <td>{{ book.category }}</td>
+                <td>{{ book.copies_actual }}</td>
+                <td>{{ book.copies_current }}</td>
+                <td>{{ book.shelf_name }}</td>
+                {% if user.is_staff %}
+                <td><a href="{% url 'update-books' book.id %}"><i class="bi bi-pencil"></i></a>
+                    <a href="{% url 'delete-book' book.id %}"><i class="bi bi-x-lg"></i></a></td>
+                {% endif %}
+              </tr>
+            {% endfor %}
+            </tbody>
+          </table>
+    </div>
+
+{% endif %}
+
+{% endblock %}

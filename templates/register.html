@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load bootstrap4 %}
+{% block title %}
+  Registration Page
+{% endblock %}
+{% block content %}
+<br>
+  <div class="container-fluid" style="width: 500px;">
+    <h2 style="text-align: center;">Sign Up</h2><hr>
+    {% if msg == None %}
+
+    {% else %}
+      <h4 style="color: red;">{{msg}}</h4>
+    {% endif %}
+
+
+    <form method="POST">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+      <center><input type="submit" class="btn btn-success" value="Sign Up"></center>
+      
+    </form>
+  </div>
+{% endblock %}

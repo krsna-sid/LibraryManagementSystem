@@ -9,8 +9,12 @@ After Create Super user, Run the Server
 ![image](https://user-images.githubusercontent.com/50632298/162002699-ec60e9ce-7a01-4d7b-819e-48e02f17c9e6.png)
 
 
-Goto Login nav on right menu
-Login using superuser credentials.
+For Signup Goto Signup nav-bar
+![image](https://user-images.githubusercontent.com/50632298/162004718-b7949022-59a4-43a1-b234-ac069919181e.png)
+
+For Login goto Login nav-bar
+Login using superuser credentials for add/delete/modify
+Student user can't add/delete/modify books details
 
 ![image](https://user-images.githubusercontent.com/50632298/162002897-68a50250-942e-4f46-a36b-b9eaf4a9fa41.png)
 
